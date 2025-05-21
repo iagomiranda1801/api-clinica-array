@@ -1,12 +1,13 @@
 const express = require('express');
-const { createController, readController, updateController, deleteController,listUsersController } = require('../controllers/index');
+const {loginController, createController, readController, updateController, deleteController,listUsersController } = require('../controllers/index');
 
 const router = express.Router();
 
-router.post('/resource', createController);
-router.get('/resource/:id', readController);
-router.put('/resource/:id', updateController);
-router.delete('/resource/:id', deleteController);
+router.post('/users', createController);
+router.get('/users/:id', readController);
+router.put('/users/:id', updateController);
+router.delete('/users/:id', deleteController);
 router.get('/users', listUsersController);
+router.post('/login', loginController);
 
 module.exports = router;
